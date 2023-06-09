@@ -6,6 +6,7 @@ if(isset($_GET['numero'])){
         
         $adv = new adivinhe();
         $adv->SetNumUser($numero);
+        $adv->SetNumComp();
         $adv->VerificarVencedor();
         session_start();
         $_SESSION["resultado"] = $adv->MostrarResultado();

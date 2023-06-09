@@ -8,20 +8,22 @@
     <title>Adivinhe o número</title>
 </head>
 <body>
-    <h1>Adivinhe o número</h1>
+    <p class="margin"><h1>Adivinhe o número</h1>
     <form method="get" action="adivinhe.php">
         <p>Insira seu número</p>
         <input type="text" name="numero">
         <input type="submit">
     </form>
+    <br>
+</p>
     <?php 
     session_start();
     if(isset($_SESSION['resultado'])){
-        echo "<p> O número que o computador escolheu foi " . $_SESSION["numeroC"] . "</p>";
-        echo "<p> O número que o usuário digitou foi " . $_SESSION["Unumero"] . "</p>";        
-        echo "<p> O ganhador foi o " . $_SESSION["resultado"] . "</p>";
+        echo "<h5> O número que o computador escolheu foi " . $_SESSION["numeroC"] . "</h5>";
+        echo "<h5> O número que o usuário digitou foi " . $_SESSION["Unumero"] . "</h5>";        
+        echo "<h5> O ganhador foi o " . $_SESSION["resultado"] . "</h5>";
     }
     session_destroy()   
     ?>
-</body>
+    </body>
 </html>
