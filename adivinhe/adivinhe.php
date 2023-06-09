@@ -1,5 +1,5 @@
 <?PHP
-include "POO.php";   
+include "../POO.php";   
 if(isset($_GET['numero'])){
     if(!empty($_GET['numero'])){
         $numero = $_GET['numero'];

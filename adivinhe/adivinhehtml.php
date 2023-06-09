@@ -19,8 +19,8 @@
     <?php 
     session_start();
     if(isset($_SESSION['resultado'])){
-        echo "<h5> O número que o computador escolheu foi " . $_SESSION["numeroC"] . "</h5>";
-        echo "<h5> O número que o usuário digitou foi " . $_SESSION["Unumero"] . "</h5>";        
+        echo "<h6> O número que o computador escolheu foi " . $_SESSION["numeroC"] . "</h6>";
+        echo "<h6> O número que o usuário digitou foi " . $_SESSION["Unumero"] . "</h6>";        
         echo "<h5> O ganhador foi o " . $_SESSION["resultado"] . "</h5>";
     }
     session_destroy()   
