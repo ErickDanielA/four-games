@@ -13,7 +13,7 @@ if(isset($_GET['numero'])){
         $_SESSION["Unumero"] = $adv->GetNumUser();
         $_SESSION["numeroC"] = $adv->GetNumComp();
         
-        header('location: adivinhehtml.php');
+        header('location: index.php');
     }
 }
-else{header('location: adivinhehtml.php');}
+else{header('location: index.php');}
