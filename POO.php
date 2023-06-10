@@ -2,7 +2,7 @@
 
 class adivinhe{
     private $numeroUser;
-    private $numeroComp = rand(1, 100);
+    private $numeroComp;
     private $resultado;
 
     function SetNumUser($number){
@@ -18,7 +18,7 @@ class adivinhe{
         return $this->numeroComp;
     }
     function VerificarVencedor(){
-        if ($this->numeroComp = $this->numeroUser){
+        if ($this->numeroComp == $this->numeroUser){
             $this->resultado = "Usuário";
         }
         else{
