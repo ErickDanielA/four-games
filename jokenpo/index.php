@@ -8,11 +8,27 @@
     <title>Jokenpô</title>
 </head>
 <body>
-    <h1>Jokenpô</h1>
-    <form method="get" action="jokenpoPOO.php">
-        <p>Escolha sua carta</p>
-        <input type="text" name="numero"/>
-        <input type="submit"/>
+    <p class="margin"><h1>Jokenpô</h1>
+    <form method="get" action="jokenpo.php">
+        <p>Escolha pedra, papel ou tesoura</p>
+        <input type="radio" id="pedra" name="ppt" value="pedra">
+        <label for="pedra">Pedra</label>
+        <input type="radio" id="papel" name="ppt" value="papel">
+        <label for="papel">Papel</label>
+        <input type="radio" id="tesoura" name="ppt" value="tesoura">
+        <label for="tesoura">Tesoura</label><br><br>
+        <input type="submit">
     </form>
-</body>
+    <br>
+</p>
+    <?php 
+    session_start();
+    if(isset($_SESSION['resultado'])){
+        echo "<h6> O símbolo que o usuário escolheu foi " . $_SESSION["UserPPT"] . "</h6>";
+        echo "<h6> O símbolo que o computador digitou foi " . $_SESSION["CompPPT"] . "</h6>";      
+        echo "<h5> O ganhador foi o " . $_SESSION["resultado"] . "</h5>";
+    }
+    session_destroy()   
+    ?>
+    </body>
 </html>
