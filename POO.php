@@ -76,3 +76,60 @@ class parimpar{
     }    
 }
 
+class jokenpo{
+    private $pptUser;
+    private $pptComp;
+    private $resultado;
+
+    function SetPPTUser($ppt){
+        $this->PPTUser = $ppt;
+    }
+    function GetPPTUser(){
+        return $this->PPTUser;
+    }
+    function SetPPTComp(){
+        $pptCompArray = array("pedra", "papel", "tesoura");
+        $this->PPTComp = array_rand($pptCompArray, 1);
+    }
+    function GetPPTComp(){
+        return $this->PPTComp;
+    }
+    function VerificarVencedor(){
+        if ($this->PPTUser == "pedra"){
+            if($this->PPTComp == "pedra"){
+                $this->resultado = "Empate";
+            }
+            elseif($this->PPTComp == "papel"){
+                $this->resultado = "Computador";
+            }
+            elseif($this->PPTComp == "tesoura"){
+                $this->resultado = "Usuário";
+            }
+        }
+        elseif ($this->PPTUser == "papel"){
+            if($this->PPTComp == "pedra"){
+                $this->resultado = "Usuário";
+            }
+            elseif($this->PPTComp == "papel"){
+                $this->resultado = "Empate";
+            }
+            elseif($this->PPTComp == "tesoura"){
+                $this->resultado = "Computador";
+            }
+        }
+        elseif ($this->PPTUser == "tesoura"){
+            if($this->PPTComp == "pedra"){
+                $this->resultado = "Computador";
+            }
+            elseif($this->PPTComp == "papel"){
+                $this->resultado = "Usuário";
+            }
+            elseif($this->PPTComp == "tesoura"){
+                $this->resultado = "Empate";
+            }
+        }
+    }
+    function MostrarResultado(){
+        return $this->resultado;
+    }    
+}
