@@ -8,11 +8,28 @@
     <title>Par ou ímpar</title>
 </head>
 <body>
-    <h1>Par ou ímpar</h1>
-    <form method="get" action="parimparPOO.php">
+    <p class="margin"><h1>Par ou ímpar</h1>
+    <form method="get" action="parimpar.php">
         <p>Insira seu número</p>
-        <input type="text" name="numero"/>
-        <input type="submit"/>
+        <input type="text" name="numero">
+        <br>
+        <input type="radio" id="par" name="parouimpar" value="par">
+        <label for="par">Par</label>
+        <input type="radio" id="impar" name="parouimpar" value="impar">
+        <label for="impar">Ímpar</label><br>
+        <input type="submit">
     </form>
-</body>
+    <br>
+</p>
+    <?php 
+    session_start();
+    if(isset($_SESSION['resultado'])){
+        echo "<h6> O número que o computador escolheu foi " . $_SESSION["numeroC"] . "</h6>";
+        echo "<h6> O número que o usuário digitou foi " . $_SESSION["Unumero"] . "</h6>"; 
+        echo "<h6> A paridade escolhida foi " . $_SESSION["Paridade"] . "</h6>";       
+        echo "<h5> O ganhador foi o " . $_SESSION["resultado"] . "</h5>";
+    }
+    session_destroy()   
+    ?>
+    </body>
 </html>
